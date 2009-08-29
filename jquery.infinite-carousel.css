@@ -7,10 +7,13 @@
 		- the number of items you want to see in the viewport
 	 */
 	overflow:hidden; /* Hides extra elements, those outside the viewport area */
+	/* Fix for IE */
+	position:relative;
 }
 #viewport ul{
 	position: relative; /* Enables positionning of elements inside viewport */
 	padding: 0; /* Resets default - User Agent - style */
+	margin: 0;
 }
 #viewport li{
 	width: 100px; /* Defines the size of inner element */
