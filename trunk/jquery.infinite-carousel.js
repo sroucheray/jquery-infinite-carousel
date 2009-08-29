@@ -7,8 +7,8 @@
 jQuery.fn.carousel = function(previous, next, options){
 	var sliderList = jQuery(this).children()[0];
 	
-	if (this && sliderList) {
-		var increment = $(sliderList).children().outerWidth("true"),
+	if (sliderList) {
+		var increment = jQuery(sliderList).children().outerWidth("true"),
 		elmnts = jQuery(sliderList).children(),
 		numElmts = elmnts.length,
 		sizeFirstElmnt = increment,
@@ -17,7 +17,7 @@ jQuery.fn.carousel = function(previous, next, options){
 		isAnimating = false;
 		
 		for (i = 0; i < shownInViewport; i++) {
-			jQuery(sliderList).css('width',(numElmts+shownInViewport)*increment + "px");
+			jQuery(sliderList).css('width',(numElmts+shownInViewport)*increment + increment + "px");
 			jQuery(sliderList).append(jQuery(elmnts[i]).clone());
 		}
 		
